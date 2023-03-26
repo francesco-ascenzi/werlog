@@ -11,7 +11,7 @@ Sends an error message to the web server's error log file.
 ### string message
 The error message that should be logged
 
-# Error_log.txt
+# Werlog.txt
 The werlog.txt file will be created and it will contain the error date, and the message passed through the function.
 
 # Example
