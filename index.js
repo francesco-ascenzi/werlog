@@ -14,7 +14,7 @@
 'use strict'
 
 function werlog(message) {
-    let mess;
+    let mess = message;
     if (message.length >= 2048) {
         mess = message.substr(0, 2048);
     }
