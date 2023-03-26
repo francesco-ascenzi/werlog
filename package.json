@@ -1,0 +1,27 @@
+{
+    "name": "werlog",
+    "version": "1.0.0",
+    "author": "Francesco 'Frash' Ascenzi",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/francesco-ascenzi/werlog.git"
+    },
+    "description": "Sends an error message to the web server's error log file",
+    "keywords": [
+        "debug",
+        "log",
+        "debugger",
+        "errors",
+        "error"
+    ],
+    "files": [
+        "index.js",
+        "LICENSE",
+        "README.md"
+    ],
+    "license": "Apache 2.0",
+    "main": "./index.js",
+    "engines": {
+        "node": ">=6.0"
+    }
+}
