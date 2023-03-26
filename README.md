@@ -3,7 +3,7 @@ Send an error message to the defined lightweigth error handling routines, based 
 
 # Description
 ```
-werLog(string message)
+werlog(string message)
 ```
 Sends an error message to the web server's error log file.
 
@@ -12,10 +12,10 @@ Sends an error message to the web server's error log file.
 The error message that should be logged
 
 # Error_log.txt
-The error_log.txt file will be created and it will contain the error date, and the message passed through the function.
+The werlog.txt file will be created and it will contain the error date, and the message passed through the function.
 
 # Example
-Example of error_log.txt:
+Example of werlog.txt:
 ```
 [Sun, 26 Mar 2023 01:02:06 GMT]Error: There was an error!
 [Sun, 28 Mar 2023 10:01:00 GMT]Error: RangeError: invalid date!
