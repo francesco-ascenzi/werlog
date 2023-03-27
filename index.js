@@ -1,22 +1,29 @@
-/** WERLOG
+/** Werlog 1.0.1
  * 
  * Lightweigth error handling routines for nodejs by Francesco "Frash" Ascenzi
  * 
- * @desc Lightweigth error handling routines for nodejs
  * @author Francesco "Frash" Ascenzi
  * 
  * @param {String} message pass the catch error message
  * 
- * @version 1.0.0
+ * @version 1.0.1
  * @license Apache 2.0
 **/
 
 'use strict'
 
+/** Werlog
+ * 
+ * You can handle your errors saving them on a file
+ * 
+ * @param message string | Log error message
+ * @return file | A file that contains the full error code
+**/
 function werlog(message) {
     let mess = message;
+    // Max string length
     if (message.length >= 2048) {
-        mess = message.substr(0, 2048);
+        mess = message.substring(0, 2048);
     }
 
     let reqFile = require('fs');
