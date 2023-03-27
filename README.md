@@ -18,6 +18,6 @@ The werlog.txt file will be created and it will contain the error date, and the 
 Example of werlog.txt:
 ```
 [Sun, 26 Mar 2023 01:02:06 GMT]Error: There was an error!
-[Sun, 28 Mar 2023 10:01:00 GMT]Error: RangeError: invalid date!
-[Sun, 1 Apr 2023 03:02:01 GMT]Error: TypeError: "x" is read-only
+[Tue, 28 Mar 2023 10:01:00 GMT]Error: RangeError: invalid date!
+[Sat, 1 Apr 2023 03:02:01 GMT]Error: TypeError: "x" is read-only
 ```
