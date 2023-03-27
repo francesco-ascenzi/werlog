@@ -1,4 +1,4 @@
-/** Werlog 1.0.1
+/** Werlog 1.0.0
  * 
  * Lightweigth error handling routines for nodejs by Francesco "Frash" Ascenzi
  * 
@@ -6,7 +6,7 @@
  * 
  * @param {String} message pass the catch error message
  * 
- * @version 1.0.1
+ * @version 1.0.0
  * @license Apache 2.0
 **/
 
