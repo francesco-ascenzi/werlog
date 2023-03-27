@@ -4,20 +4,16 @@
  * 
  * @author Francesco "Frash" Ascenzi
  * 
- * @param {String} message pass the catch error message
- * 
  * @version 1.0.0
  * @license Apache 2.0
 **/
 
 'use strict'
 
-/** Werlog
+/** You can handle your errors saving them on a file
  * 
- * You can handle your errors saving them on a file
- * 
- * @param message string | Log error message
- * @return file | A file that contains the full error code
+ * @param {String} message string | Log error message
+ * @return {Txt} file | A file that contains the full error code
 **/
 function werlog(message) {
     let mess = message;
