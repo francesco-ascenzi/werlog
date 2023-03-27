@@ -1,10 +1,10 @@
-/** Werlog 1.0.0
+/** Werlog 2.0.0
  * 
  * Lightweigth error handling routines for nodejs by Francesco "Frash" Ascenzi
  * 
  * @author Francesco "Frash" Ascenzi
  * 
- * @version 1.0.0
+ * @version 2.0.0
  * @license Apache 2.0
 **/
 
