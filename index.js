@@ -1,6 +1,6 @@
 'use strict'
 
-/** WERLOG 3.0.0
+/** WERLOG 1.0.0
  * 
  * Lightweigth error handling routines for nodejs by Francesco "Frash" Ascenzi
  * 
@@ -9,7 +9,7 @@
  * 
  * @author Francesco "Frash" Ascenzi
  * 
- * @version 3.0.0
+ * @version 1.0.0
  * @license Apache 2.0
 **/
 function werlog(message) {
