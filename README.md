@@ -37,7 +37,7 @@ if (/* condition */) {
 Werlog can be imported with the require function.
 
 ```
-const werlog = require('werlog')
+const werlog = require('werlog');
 ```
 
 # Parameters
