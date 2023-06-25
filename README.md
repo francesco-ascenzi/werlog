@@ -16,12 +16,12 @@ npm i werlog
 # Usage
 Using with ```catch``` function:
 ```
-const err = require('werlog');
+const werlog = require('werlog');
 
 fetch(/* url here */)
 .then(/* action here */)
 .catch(e => {
-    err.werlog(e);
+    werlog(e);
 })
 ```
 Using with ```if``` condition:
@@ -29,7 +29,7 @@ Using with ```if``` condition:
 const err = require('werlog');
 
 if (/* condition */) {
-    err.werlog(e);
+    werlog(e);
 }
 ```
 
@@ -37,7 +37,7 @@ if (/* condition */) {
 Werlog can be imported with the require function.
 
 ```
-const err = require('werlog')
+const werlog = require('werlog');
 ```
 
 # Parameters
