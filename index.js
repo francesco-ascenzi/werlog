@@ -1,35 +1,30 @@
-/** Werlog 2.0.0
+'use strict'
+
+/** WERLOG 3.0.0
  * 
  * Lightweigth error handling routines for nodejs by Francesco "Frash" Ascenzi
  * 
+ * @param {String} message string | Log error
+ * @return {Txt} file | A file that contains the full error code
+ * 
  * @author Francesco "Frash" Ascenzi
  * 
- * @version 2.0.0
+ * @version 3.0.0
  * @license Apache 2.0
 **/
-
-'use strict'
-
-/** You can handle your errors saving them on a file
- * 
- * @param {String} message string | Log error message
- * @return {Txt} file | A file that contains the full error code
-**/
 function werlog(message) {
+    if (typeof message != 'string')
+        return console.error("Error text is not a string");
+
     let mess = message;
-    // Max string length
-    if (message.length >= 2048) {
-        mess = message.substring(0, 2048);
-    }
+    if (message.length >= 3600) // Max string length
+        mess = message.substring(0, 3600);
 
     let reqFile = require('fs');
 
-    // Date format type
-    let dateFormat = new Date().toUTCString();
-    // Error string content
-    let content = "[" + dateFormat + "]Error: " + mess + "\r\n";
-    // Encoding type
-    let encoding = "utf8";
+    let dateFormat = new Date().toLocaleString();
+    let content = `[${dateFormat}]Error: ${mess}` + '\r\n';
+    let encoding = 'utf8';
 
     reqFile.appendFile('werlog.txt', content, encoding, err => {
         if (err) {
@@ -38,6 +33,4 @@ function werlog(message) {
     });
 }
 
-module.exports = {
-    werlog: werlog
-}
+module.exports = werlog;
