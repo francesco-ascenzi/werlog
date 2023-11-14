@@ -20,13 +20,13 @@ function werlog(message, maxLength = 3600) {
             throw new Error('Error is not a string or its value is empty');
         }
 
-        var mess = '';
+        let mess = '';
         if (message.length > maxLength) {
             mess = message.substring(0, maxLength);
         }
 
-        var dateFormat = new Date().toLocaleString();
-        var content = "[".concat(dateFormat, "]Error: ").concat(mess) + '\r\n';
+        let dateFormat = new Date().toLocaleString();
+        let content = "[".concat(dateFormat, "]Error: ").concat(mess) + '\r\n';
 
         fs.appendFile('werlog.txt', content, 'utf-8');
     } catch (e) {
