@@ -1,7 +1,7 @@
 'use strict';
 
 // Required packages
-let fs = require('fs');
+const fs = require('fs');
 
 /** WERLOG 4.0 | Lightweigth error handling routines for Node
  *
@@ -28,8 +28,8 @@ async function werlog(message, maxLength = 3600) {
     }
 
     // Assign date and file text
-    let date = new Date().toLocaleString();
-    let text = `[${date}]${message}\r\n`;
+    const date = new Date().toLocaleString();
+    const text = `[${date}]${message}\r\n`;
 
     // Create and append line on the last line
     await fs.promises.appendFile('werlog.txt', text, 'utf-8', err => {
