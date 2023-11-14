@@ -1,6 +1,6 @@
 {
     "name": "werlog",
-    "version": "4.0.2",
+    "version": "4.1.0",
     "author": "Francesco 'Frash' Ascenzi",
     "repository": {
         "type": "git",
@@ -26,8 +26,5 @@
     },
     "dependencies": {
         "node": "^21.1.0"
-    },
-    "devDependencies": {
-        "@types/node": "^20.9.0"
     }
 }
