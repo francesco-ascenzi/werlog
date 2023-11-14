@@ -23,5 +23,12 @@
     "main": "./index.js",
     "engines": {
         "node": ">=6.0"
+    },
+    "dependencies": {
+        "node": "^21.1.0",
+        "typescript": "^5.2.2"
+    },
+    "devDependencies": {
+        "@types/node": "^20.9.0"
     }
 }
