@@ -11,7 +11,7 @@
  *
  * @version 4.0.0
  * @license Apache 2.0
-**/
+ */
 function werlog(message, maxLength = 3600) {
     try {
         if (typeof message != 'string' && message.trim() == '') {
