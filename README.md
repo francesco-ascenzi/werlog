@@ -1,25 +1,39 @@
 # Werlog
-Send an error message to the defined lightweigth error handling routines, based on PHP error_log().
+Send an error message to the defined lightweigth error handling routines. It's based on PHP error_log().
 
 # Description
 ```
-werlog(string message)
+werlog(message: string) {}
 ```
 Sends an error message to the web server's error log file.
 
 # Install
-Get werlog from npm:
+Install werlog with:
 ```
 npm i werlog
 ```
 
+# Import
+Assign to a const variable:
+```
+const werlog = require('werlog');
+```
+
 # Usage
-Using with ```catch``` function:
+Using with ```try-catch```:
+```
+try {
+    ...
+} catch(e) {
+    werlog(e);
+}
+```
+Using with promise-based ```then-catch```:
 ```
 const werlog = require('werlog');
 
-fetch(/* url here */)
-.then(/* action here */)
+fetch(...)
+.then(...)
 .catch(e => {
     werlog(e);
 })
@@ -28,27 +42,22 @@ Using with ```if``` condition:
 ```
 const werlog = require('werlog');
 
-if (/* condition */) {
+if (...) {
     werlog(e);
 }
-```
-
-# Import
-Werlog can be imported with the require function.
-
-```
-const werlog = require('werlog');
 ```
 
 # Parameters
 ### string message
 The error message that should be logged.
 
-# Werlog.txt
-The werlog.txt file will be created and it will contain the error date, and the message passed through the function.
+### number maxLength
+The maximum allowed length for the error message. If the length of the message exceeds this value, it will be trimmed (default 3600 characters).
 
 # Results
-Example of werlog.txt:
+The werlog.txt file will be created, containing the error date and the message passed to the function.
+
+### Results example:
 ```
 [Sun, 26 Mar 2023 01:02:06 GMT]Error: There was an error!
 [Tue, 28 Mar 2023 10:01:00 GMT]Error: RangeError: invalid date!
