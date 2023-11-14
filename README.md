@@ -26,7 +26,7 @@ fetch(/* url here */)
 ```
 Using with ```if``` condition:
 ```
-const err = require('werlog');
+const werlog = require('werlog');
 
 if (/* condition */) {
     werlog(e);
