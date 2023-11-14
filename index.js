@@ -14,7 +14,7 @@ let fs = require('fs');
  * @license Apache 2.0
  */
 async function werlog(message, maxLength = 3600) {
-    // Convert it to a string and check for its value and its length
+    // Convert it to a string
     message = message.toString();
 
     if (message.trim() == '') {
