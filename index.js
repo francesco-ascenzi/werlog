@@ -26,7 +26,7 @@ function werlog(message, maxLength = 3600) {
         }
 
         let dateFormat = new Date().toLocaleString();
-        let content = "[".concat(dateFormat, "]Error: ").concat(mess) + '\r\n';
+        let content = `[${dateFormat}]Error: ${mess}\r\n`;
 
         fs.appendFile('werlog.txt', content, 'utf-8');
     } catch (e) {
