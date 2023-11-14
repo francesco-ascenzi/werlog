@@ -1,5 +1,8 @@
 'use strict';
 
+// Required packages
+let fs = require('fs');
+
 /** WERLOG 4.0 | Lightweigth error handling routines for Node
  *
  * @param {String} message error message string
@@ -24,9 +27,7 @@ async function werlog(message, maxLength = 3600) {
         return;
     }
 
-    // Require the file system module and assign date and file text
-    let fs = require('fs');
-
+    // Assign date and file text
     let date = new Date().toLocaleString();
     let text = `[${date}]${message}\r\n`;
 
