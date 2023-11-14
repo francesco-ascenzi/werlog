@@ -1,7 +1,5 @@
 'use strict';
 
-var fs = require('fs');
-
 /** WERLOG 4.0.0
  *
  * Lightweigth error handling routines for Node
@@ -19,6 +17,8 @@ function werlog(message, maxLength = 3600) {
         if (typeof message != 'string' && message.trim() == '') {
             throw new Error('Error is not a string or its value is empty');
         }
+
+        let fs = require('fs');
 
         let mess = '';
         if (message.length > maxLength) {
