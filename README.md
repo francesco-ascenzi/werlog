@@ -1,9 +1,25 @@
 # Werlog
-Send an error message to the defined lightweigth error handling routines. It's based on PHP error_log().
+Fast, lightweigtht, customizable, and asynchronous error handling routines for Node.   
+   
+Initially based on PHP error_log.
+
+### Werlog 4.4
+Fixes:   
+- The object can be printed in its entirety.
+- Fixed max length bug.
+
+### Summary
+- [Description](#description)
+- [Install](#install)
+- [Import](#import)
+- [Usage](#usage)
+- [Parameters](#parameters)
+- [Results](#results)
+- [License](#license)
 
 # Description
 ```
-werlog(message: string) {}
+werlog(message) {}
 ```
 Sends an error message to the web server's error log file.
 
@@ -14,7 +30,7 @@ npm i werlog
 ```
 
 # Import
-Assign to a const variable:
+Assign to a let or a const variable:
 ```
 const werlog = require('werlog');
 ```
@@ -22,6 +38,8 @@ const werlog = require('werlog');
 # Usage
 Using with ```try-catch```:
 ```
+const werlog = require('werlog');
+
 try {
     ...
 } catch(e) {
@@ -51,8 +69,19 @@ if (...) {
 ### string message
 The error message that should be logged.
 
-### number maxLength
-The maximum allowed length for the error message. If the length of the message exceeds this value, it will be trimmed (default 3600 characters).
+### (optional) number maxLength | default 3600 characters
+The maximum allowed length for the error message. If the length of the message exceeds this value, it will be trimmed.
+
+```
+werlog(e, 12);
+```
+
+### (optional) string filePath | default "./werlog.txt"
+The output error log file path.
+
+```
+werlog(e, 2400, './errorlog.txt');
+```
 
 # Results
 The werlog.txt file will be created, containing the error date and the message passed to the function.
