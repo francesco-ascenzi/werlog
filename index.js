@@ -1,6 +1,6 @@
 'use strict';
 
-const fs = require('fs');
+const fs = require('fs').promises;
 
 /** WERLOG | Lightweigth error handling routines for Node
  *
@@ -39,11 +39,11 @@ async function werlog(errorString, maxLength = 3600, filePath = './werlog.txt') 
     return;
   }
 
-  fs.appendFile(filePath, text, 'utf-8', (err) => {
-    if (err) {
-      console.error(err);
-    }
-  });
+  try {
+    await fs.appendFile(filePath, text, 'utf-8');
+  } catch (e) {
+    console.error(e);
+  }
 
 }
 
