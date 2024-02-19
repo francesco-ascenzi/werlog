@@ -1,96 +1,111 @@
 # Werlog
-Fast, lightweigtht, customizable, and asynchronous error handling routines for Node.   
-   
-Initially based on PHP error_log.
+Fast, lightweigth, customizable, and asynchronous function that appends logs to a file or prints them out to the console.
 
-### Werlog 4.4
-Fixes:   
-- The object can be printed in its entirety.
-- Fixed max length bug.
+### Key features:
+- **Fast and lightweight**: Werlog is designed to be efficient and have minimal impact on your application's performance.
+- **Customizable**: You can easily customize the format and output of your logs to meet your specific needs.
+- **Asynchronous**: Werlog works in the background so it won't block your application's main thread.
+- **Flexible**: Werlog can be used to log to a file, the console, or both.
 
-### Summary
-- [Description](#description)
+# Summary
 - [Install](#install)
-- [Import](#import)
+- [Initialize](#initialize)
 - [Usage](#usage)
 - [Parameters](#parameters)
 - [Results](#results)
 - [License](#license)
 
-# Description
-```
-werlog(message) {}
-```
-Sends an error message to the web server's error log file.
 
 # Install
-Install werlog with:
+To get started with Werlog, simply install the npm package:
 ```
 npm i werlog
 ```
-
-# Import
-Assign to a let or a const variable:
+# Initialize
+Assigns it to a let or a const variable, and optionally initialize options:
 ```
 const werlog = require('werlog');
+
+const wlogOpts = {
+   console: true,
+   consoleStringLength: 500,
+   fileStringLength: 500,
+   type: 'i',
+   path: './werlog.txt'
+};
 ```
 
 # Usage
+Common usage:
+```
+werlog(e, wlogOpts);
+```
 Using with ```try-catch```:
 ```
-const werlog = require('werlog');
-
 try {
     ...
 } catch(e) {
-    werlog(e);
+    werlog(e, wlogOpts);
 }
 ```
 Using with promise-based ```then-catch```:
 ```
-const werlog = require('werlog');
-
 fetch(...)
 .then(...)
 .catch(e => {
-    werlog(e);
+    werlog(e, wlogOpts);
 })
 ```
 Using with ```if``` condition:
 ```
-const werlog = require('werlog');
-
 if (...) {
-    werlog(e);
+    werlog('Sentence', wlogOpts);
 }
 ```
 
 # Parameters
-### string message
-The error message that should be logged.
+### any data | required
+Every type of data you would to log or write
 
-### (optional) number maxLength | default 3600 characters
-The maximum allowed length for the error message. If the length of the message exceeds this value, it will be trimmed.
-
+### (optional) object options | default = {}
 ```
-werlog(e, 12);
+let wlogOpts = {
+```
+### (optional) string options.type | default = info
+Accepts: 'f' = fatal || 'w' = warning/error || 'd' = debug || '' = info
+```
+   type: '' // Type of console message
 ```
 
-### (optional) string filePath | default "./werlog.txt"
-The output error log file path.
-
+### (optional) boolean options.console | default = false
 ```
-werlog(e, 2400, './errorlog.txt');
+   console: false // Also print string to the console
+```
+
+### (optional) number options.consoleStringLength | default = 1kkk characters
+```
+   consoleStringLength: 1000000 // Max string length on console
+```
+
+### (optional) number options.fileStringLength | default = 3.6k characters
+```
+   fileStringLength: 3600 // Max string length in file
+```
+
+### (optional) string options.path | default = './werlog.txt'
+```
+   path: './werlog.txt' // Output file path
+}
 ```
 
 # Results
-The werlog.txt file will be created, containing the error date and the message passed to the function.
+Werlog will create a .txt file ( default: werlog.txt ) or a formatted console text that contains the date and the stringified data passed to the function.
 
 ### Results example:
 ```
-[Sun, 26 Mar 2023 01:02:06 GMT]Error: There was an error!
-[Tue, 28 Mar 2023 10:01:00 GMT]Error: RangeError: invalid date!
-[Sat, 1 Apr 2023 03:02:01 GMT]Error: TypeError: "x" is read-only
+[02/19/2024, 10:35:06.063 PM] There was an error!
+[02/13/2024, 03:10:46.009 AM] TypeError: "x" is read-only
+[01/24/2024, 05:00:20.100 PM] [Hello, world!]
 ```
 
 # License
