@@ -23,5 +23,8 @@
     "main": "./index.js",
     "engines": {
         "node": ">=6.0"
+    },
+    "dependencies": {
+        "node": "^21.6.2"
     }
 }
