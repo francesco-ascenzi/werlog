@@ -1,12 +1,12 @@
 {
     "name": "werlog",
-    "version": "4.5.5",
+    "version": "4.5.6",
     "author": "Francesco 'Frash' Ascenzi",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/francesco-ascenzi/werlog.git"
     },
-    "description": "Sends an error message to the web server's error log file",
+    "description": "Fast, lightweigth, customizable, and asynchronous function that appends logs to a file or prints them out to the console",
     "keywords": [
         "debug",
         "log",

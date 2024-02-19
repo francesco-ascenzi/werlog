@@ -1,6 +1,6 @@
 # Werlog | Changelog.md
 
-### v 4.5.5
+### v 4.5.6
 New features:
 - **Enhanced data logging**: Now accepts any data type as an attribute for flexible logging possibilities.
 - **Detailed timestamps**: Date strings include both two-digit values and milliseconds for precise recording.
