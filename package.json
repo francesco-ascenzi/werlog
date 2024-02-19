@@ -1,10 +1,10 @@
 {
     "name": "werlog",
-    "version": "4.5.0",
+    "version": "4.5.5",
     "author": "Francesco 'Frash' Ascenzi",
     "repository": {
         "type": "git",
-        "url": "https://github.com/francesco-ascenzi/werlog.git"
+        "url": "git+https://github.com/francesco-ascenzi/werlog.git"
     },
     "description": "Sends an error message to the web server's error log file",
     "keywords": [
