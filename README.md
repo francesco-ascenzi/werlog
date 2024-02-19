@@ -65,13 +65,13 @@ if (...) {
 
 # Parameters
 ### any data | required
-Every type of data you would to log or write
+Every type of data you would to log or to write
 
 ### (optional) object options | default = {}
 ```
 let wlogOpts = {
 ```
-### (optional) string options.type | default = info
+### (optional) string options.type | default = ''
 Accepts: 'f' = fatal || 'w' = warning/error || 'd' = debug || '' = info
 ```
    type: '' // Type of console message
@@ -94,12 +94,12 @@ Accepts: 'f' = fatal || 'w' = warning/error || 'd' = debug || '' = info
 
 ### (optional) string options.path | default = './werlog.txt'
 ```
-   path: './werlog.txt' // Output file path
+   path: './werlog.txt' // Output file path and extension
 }
 ```
 
 # Results
-Werlog will create a .txt file ( default: werlog.txt ) or a formatted console text that contains the date and the stringified data passed to the function.
+Werlog will create a file ( default: werlog.txt ) or a formatted console text that contains the log date and the stringified data passed to it.
 
 ### Results example:
 ```
