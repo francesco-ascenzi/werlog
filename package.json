@@ -1,6 +1,6 @@
 {
   "name": "werlog",
-  "version": "5.0.1",
+  "version": "5.0.3",
   "author": "Francesco 'Frash' Ascenzi",
   "repository": {
     "type": "git",
@@ -16,6 +16,7 @@
     "error"
   ],
   "files": [
+    "./types/*",
     "index.js",
     "LICENSE",
     "README.md"
