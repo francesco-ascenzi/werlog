@@ -1,5 +1,4 @@
 # Files extension
-*.txt
 *.js
 
 # Node modules
@@ -7,7 +6,5 @@ node_modules
 /node_modules
 
 # Packages
-package-lock.json
-
-# Ignore files
 .npmignore
+package-lock.json
