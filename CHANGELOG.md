@@ -1,5 +1,12 @@
 # Werlog | Changelog.md
 
+### v 5.0.0
+New features:
+- **Typescript declaration**: Now you can use Typescript with it.
+
+Fixes:
+- **Removed useless dependencies**: Removed useless dependencies.
+
 ### v 4.5.6
 New features:
 - **Enhanced data logging**: Now accepts any data type as an attribute for flexible logging possibilities.

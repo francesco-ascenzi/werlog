@@ -9,7 +9,7 @@ Fast, lightweigth, customizable, and asynchronous function that appends logs to 
 
 # Summary
 - [Install](#install)
-- [Initialize](#initialize)
+- [Import](#import)
 - [Usage](#usage)
 - [Parameters](#parameters)
 - [Results](#results)
@@ -21,18 +21,22 @@ To get started with Werlog, simply install the npm package:
 ```
 npm i werlog
 ```
-# Initialize
-Assigns it to a let or a const variable, and optionally initialize options:
+
+# Import
 ```
+// ES6
+import werlog from 'werlog';
+
+// CommonJS
 const werlog = require('werlog');
 
 const wlogOpts = {
-   console: true,
-   consoleStringLength: 500,
-   fileStringLength: 500,
-   type: 'i',
-   path: './werlog.txt'
-};
+   filePath: './werlog.txt',
+   print: true,
+   printType: 'i',
+   maxFileChars: 500,
+   maxPrintChars: 500
+}
 ```
 
 # Usage
@@ -43,9 +47,9 @@ werlog(e, wlogOpts);
 Using with ```try-catch```:
 ```
 try {
-    ...
+   ...
 } catch(e) {
-    werlog(e, wlogOpts);
+   werlog(e, wlogOpts);
 }
 ```
 Using with promise-based ```then-catch```:
@@ -53,49 +57,49 @@ Using with promise-based ```then-catch```:
 fetch(...)
 .then(...)
 .catch(e => {
-    werlog(e, wlogOpts);
+   werlog(e, wlogOpts);
 })
 ```
 Using with ```if``` condition:
 ```
 if (...) {
-    werlog('Sentence', wlogOpts);
+   werlog('Sentence', wlogOpts);
 }
 ```
 
 # Parameters
 ### any data | required
-Every type of data you would to log or to write
+Every type of data allowed
 
 ### (optional) object options | default = {}
 ```
 let wlogOpts = {
 ```
-### (optional) string options.type | default = ''
+### (optional) string options.filePath | default = './werlog.txt'
+```
+   filePath: './werlog.txt' // Output file path
+}
+```
+
+### (optional) boolean options.print | default = false
+```
+   print: false // May will be printed to console?
+```
+
+### (optional) string options.printType | default = ''
 Accepts: 'f' = fatal || 'w' = warning/error || 'd' = debug || '' = info
 ```
-   type: '' // Type of console message
+   printType: '' // Console type message
 ```
 
-### (optional) boolean options.console | default = false
+### (optional) number options.maxFileChars | default = 1kkk characters
 ```
-   console: false // Also print string to the console
-```
-
-### (optional) number options.consoleStringLength | default = 1kkk characters
-```
-   consoleStringLength: 1000000 // Max string length on console
+   maxFileChars: 3600 // Max text chars length can be logged
 ```
 
-### (optional) number options.fileStringLength | default = 3.6k characters
+### (optional) number options.maxPrintChars | default = 3.6k characters
 ```
-   fileStringLength: 3600 // Max string length in file
-```
-
-### (optional) string options.path | default = './werlog.txt'
-```
-   path: './werlog.txt' // Output file path and extension
-}
+   maxPrintChars: 1000000 // Max printable text chars length on console
 ```
 
 # Results
